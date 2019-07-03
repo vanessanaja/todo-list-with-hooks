@@ -16,8 +16,14 @@ function TodoApp(){
         margin: 0,
         height: '100vh',
         backgroundColor: '#fafafa'
-  }}>
-
+  }}
+    elevation = {0}
+  >
+  <AppBar>
+    <ToolBar>
+      <Typography colors='inherit'>Todos With Hooks</Typography>
+    </ToolBar>
+  </AppBar>
     </Paper>
   )
 }
