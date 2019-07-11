@@ -17,6 +17,10 @@ function TodoApp(){
   const addTodo = newTodoText => {
     setTodos([...todos, {id: 4, task: newTodoText, completed: false}]);
   }
+  const removeTodo = todoId => {
+    const updatedTodos = todos.filter(todo => todo.id !== todoId);
+    setTodos(updatedTodos);
+  }
   return (
     <Paper
       style={{
