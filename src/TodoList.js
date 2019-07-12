@@ -5,7 +5,7 @@ import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
 import uuid from "uuid/v4";
 
-function TodoList({ todos, removeTodo }){
+function TodoList({ todos, removeTodo, toggleTodo }){
   return(
     <Paper>
     <List>
@@ -17,6 +17,7 @@ function TodoList({ todos, removeTodo }){
         key={todo.id} 
         completed={todo.completed}
         removeTodo={removeTodo}
+        toggleTodo={toggleTodo}
         />
       <Divider />
       </>
