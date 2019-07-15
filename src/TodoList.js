@@ -13,10 +13,12 @@ function TodoList({ todos, removeTodo, toggleTodo, editTodo }){
         {todos.map((todo, i) => (
           <>
             <Todo
-              id={todo.id}
-              task={todo.task}
+            //can just pass in destructured todo instead of id, taks and completed
+              {...todo}
+              // id={todo.id}
+              // task={todo.task}
               key={todo.id}
-              completed={todo.completed}
+              // completed={todo.completed}
               removeTodo={removeTodo}
               toggleTodo={toggleTodo}
               editTodo={editTodo}
