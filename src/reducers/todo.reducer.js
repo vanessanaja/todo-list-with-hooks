@@ -4,18 +4,17 @@ const reducer = (state, action) => {
   switch(action.type){
     case "ADD":
       return [...state, {id: uuid(), task: action.task, completed: false}]
+    case "REMOVE":
+      return state.filter(todo => todo.id !== action.id)
+    case "TOGGLE":
+      return state.map(todo =>
+          todo.id === action.id ? {...todo, completed: !todo.completed } : state
+        )
   }
 }
 // {type: "Add", task: "Walk Dog"}
 // {type: "Remove", id: 23232}
 
-addTodo: newTodoText => {
-      setTodos([...todos, {id: uuid(), task: newTodoText, completed: false}]);
-    },
-    removeTodo: todoId => {
-      const updatedTodos = todos.filter(todo => todo.id !== todoId);
-      setTodos(updatedTodos);
-    },
     toggleTodo: todoId => {
       const updatedTodos = todos.map(todo =>
           todo.id === todoId ? {...todo, completed: !todo.completed } : todo
