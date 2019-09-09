@@ -10,20 +10,9 @@ const reducer = (state, action) => {
       return state.map(todo =>
           todo.id === action.id ? {...todo, completed: !todo.completed } : state
         )
+    case "EDIT":
+      return state.map(todo =>
+          todo.id === action.id ? {...todo, task: action.newTask  } : todo
+        )
   }
 }
-// {type: "Add", task: "Walk Dog"}
-// {type: "Remove", id: 23232}
-
-    toggleTodo: todoId => {
-      const updatedTodos = todos.map(todo =>
-          todo.id === todoId ? {...todo, completed: !todo.completed } : todo
-        );
-        setTodos(updatedTodos);
-    },
-    editTodo: (todoId, newTask) => {
-      const updatedTodos = todos.map(todo =>
-          todo.id === todoId ? {...todo, task: newTask  } : todo
-        );
-        setTodos(updatedTodos);
-    }
