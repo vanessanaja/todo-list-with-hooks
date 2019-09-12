@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, memo } from 'react';
 import useToggleState from './Hooks/useToggleState';
 import useToggle from './Hooks/useToggleState';
 import EditTodoForm from './EditTodoForm';
@@ -13,7 +13,7 @@ import { DispatchContext } from './context/todos.context';
 
 
 function Todo({ id, task, completed }){
-  const { dispatch } = useContext(DispatchContext);
+  const dispatch = useContext(DispatchContext);
   const [isEditing, toggle] = useToggleState(false);
   return (
     <ListItem style={{ height: '64px'}} >
@@ -43,4 +43,4 @@ function Todo({ id, task, completed }){
   );
 }
 
-export default Todo;
+export default memo(Todo);

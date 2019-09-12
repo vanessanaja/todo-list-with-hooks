@@ -4,7 +4,7 @@ import useInputState from './Hooks/useInputState';
 import { DispatchContext } from './context/todos.context';
 
 function EditTodoForm({ id, task, toggleEditForm  }){
-  const { dispatch } = useContext(DispatchContext);
+  const dispatch = useContext(DispatchContext);
   const [value, handleChange, reset] = useInputState(task);
   return(
     <form
